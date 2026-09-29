@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Troopod × Isharya</title>
+<meta name="description" content="A redesigned product page for the Tennis Girlie Square Front Back Earrings, and the reasoning behind every module.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080A;--bg-2:#0B0B0E;--card:#121216;--card-2:#16161B;--line:#1F1F27;--line-2:#2A2A34;
+  --txt:#FFFFFF;--muted:#A2A2AE;--muted-2:#6E6E7A;
+  --purple:#7C6BF5;--purple-bg:rgba(124,107,245,.12);--purple-line:rgba(124,107,245,.28);
+  --green:#4ADE80;--green-bg:rgba(30,90,55,.16);--green-line:rgba(74,222,128,.22);
+  --red:#F0685A;--red-bg:rgba(95,32,26,.20);--red-line:rgba(240,104,90,.20);
+  --amber:#E3A13C;--amber-bg:rgba(100,68,16,.18);--amber-line:rgba(227,161,60,.22);
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--txt);font-family:"Plus Jakarta Sans",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(8,8,10,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1180px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;gap:36px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:17px;white-space:nowrap}
+.logo{height:22px;width:auto}
+.brand .x{color:var(--muted-2);font-weight:400}
+.nav-links{display:flex;gap:26px;font-family:var(--mono);font-size:13px}
+.nav-links a{color:var(--muted);text-decoration:none;transition:color .15s}
+.nav-links a:hover{color:var(--txt)}
+.nav-links a span{color:var(--muted-2);margin-right:6px}
+
+/* sections */
+section{padding:104px 0;border-bottom:1px solid var(--line)}
+section:first-of-type{padding-top:58px}
+section:last-of-type{border-bottom:none}
+.eyebrow{font-family:var(--mono);font-size:13px;color:var(--muted-2);margin-bottom:24px}
+.eyebrow b{color:var(--purple);font-weight:400}
+h1,h2{font-size:38px;line-height:1.1;font-weight:800;letter-spacing:-.02em;margin-bottom:24px}
+h1 em,h2 em{font-style:normal;color:var(--purple)}
+.lede{font-size:16.5px;color:var(--muted);max-width:880px;margin-bottom:44px}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:34px}
+.stats.four{grid-template-columns:repeat(4,1fr)}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px}
+.stat b{display:block;font-size:30px;font-weight:800;color:var(--purple);line-height:1;margin-bottom:14px}
+.stat b.red{color:var(--red)}
+.stat span{color:var(--muted);font-size:14.5px}
+
+.goals{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.goal{background:var(--green-bg);border:1px solid var(--green-line);border-radius:14px;padding:24px 28px}
+.goal .tag{font-family:var(--mono);font-size:13px;color:var(--green);margin-bottom:12px}
+.goal p{font-size:15px;line-height:1.55}
+
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;text-decoration:none;padding:13px 20px;border-radius:10px;border:1px solid var(--line-2);background:var(--card);color:var(--txt);transition:border-color .15s,background .15s}
+.btn:hover{border-color:var(--muted-2)}
+.btn.p{background:var(--purple);border-color:var(--purple)}
+.btn.p:hover{background:#6c5ae8}
+
+/* problems */
+.prob{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:34px;margin-bottom:22px}
+.prob-top{display:flex;justify-content:space-between;align-items:flex-start;gap:22px;margin-bottom:20px}
+.prob-tag{font-family:var(--mono);font-size:13px;color:var(--muted-2)}
+.pill{font-family:var(--mono);font-size:12.5px;color:var(--green);text-decoration:none;border:1px solid var(--green-line);background:var(--green-bg);border-radius:999px;padding:7px 15px;white-space:nowrap;transition:background .15s}
+.pill:hover{background:rgba(30,90,55,.3)}
+.prob h3{font-size:22px;font-weight:700;letter-spacing:-.01em;margin-bottom:14px}
+.prob > p,.prob-body p{color:var(--muted);font-size:15px}
+.prob-body{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:28px;align-items:center;margin-top:6px}
+.prob-body.solo{grid-template-columns:1fr}
+.barrier{background:var(--red-bg);border:1px solid var(--red-line);border-radius:12px;padding:18px 20px;margin-top:14px}
+.barrier .tag{font-family:var(--mono);font-size:12px;color:var(--red);margin-bottom:8px}
+.barrier h4{font-size:15.5px;font-weight:700;margin-bottom:6px}
+.barrier p{font-size:14px;color:var(--muted)}
+
+/* screenshots */
+.shot{border:1px solid var(--line-2);border-radius:12px;overflow:hidden;background:#fff;cursor:zoom-in;position:relative}
+.shot img{width:100%;height:auto}
+.shot.phone{max-width:300px;border-radius:22px;border-width:6px;border-color:#1b1b21;margin:0 auto}
+.cap{font-family:var(--mono);font-size:12px;color:var(--muted-2);margin-top:10px}
+.cap b{color:var(--muted);font-weight:500}
+.shots-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.shots-2 .cap,.shot.phone + .cap{text-align:center}
+
+/* speed */
+.speed{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:20px}
+.sp{background:var(--card-2);border:1px solid var(--line);border-radius:12px;padding:16px}
+.sp .lbl{font-family:var(--mono);font-size:11px;color:var(--muted-2);margin-bottom:8px}
+.sp b{font-size:22px;font-weight:700;line-height:1;color:var(--red)}
+.sp b.a{color:var(--amber)}.sp b.g{color:var(--green)}
+
+/* modules */
+.mod{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:44px;align-items:start;padding:56px 0;border-top:1px solid var(--line)}
+.mod:first-of-type{border-top:none;padding-top:10px}
+.mod.flip .mod-media{order:2}
+.mod.wide{grid-template-columns:1fr;gap:28px}
+.mod-media{position:static}
+.mod.wide .mod-media{position:static}
+.mod-num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:var(--purple-bg);border:1px solid var(--purple-line);color:var(--purple);font-family:var(--mono);font-size:13px;margin-bottom:16px}
+.mod h3{font-size:24px;font-weight:800;letter-spacing:-.015em;line-height:1.2;margin-bottom:8px}
+.solves{font-family:var(--mono);font-size:12.5px;color:var(--muted-2);margin-bottom:22px}
+.solves a{color:var(--green);text-decoration:none}
+.solves a:hover{text-decoration:underline}
+.why{border-radius:12px;padding:18px 20px;margin-bottom:12px;border:1px solid var(--line)}
+.why .tag{font-family:var(--mono);font-size:12px;margin-bottom:8px}
+.why p{font-size:14.5px;color:var(--muted)}
+.why p + p{margin-top:8px}
+.why ul{list-style:none;margin-top:4px}
+.why li{font-size:14.5px;color:var(--muted);padding:6px 0 6px 18px;position:relative}
+.why li::before{content:"";position:absolute;left:2px;top:15px;width:6px;height:6px;border-radius:2px;background:currentColor;opacity:.6}
+.why li b{color:var(--txt);font-weight:600}
+.why.c{background:var(--green-bg);border-color:var(--green-line)}
+.why.c .tag{color:var(--green)}
+.why.c li::before{background:var(--green)}
+.why.d{background:var(--purple-bg);border-color:var(--purple-line)}
+.why.d .tag{color:var(--purple)}
+.why.d li::before{background:var(--purple)}
+.mod-text-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* side-by-side modules: the screenshot starts level with the first text box, not the heading */
+@media (min-width:981px){
+  .mod:not(.wide){grid-template-rows:auto auto auto auto auto 1fr;row-gap:0}
+  .mod:not(.wide) > div:not(.mod-media){display:contents}
+  .mod:not(.wide) > div:not(.mod-media) > *{grid-column:2}
+  .mod.flip:not(.wide) > div:not(.mod-media) > *{grid-column:1}
+  .mod:not(.wide) .mod-num{justify-self:start}
+  .mod:not(.wide) > .mod-media{grid-column:1;grid-row:4 / span 3}
+  .mod.flip:not(.wide) > .mod-media{grid-column:2}
+  /* .top keeps the screenshot level with the module number instead */
+  .mod.top:not(.wide) > .mod-media{grid-row:1 / -1}
+}
+
+/* before/after */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:10px}
+.ba-col{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.ba-h{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;margin-bottom:18px}
+.ba-h i{width:8px;height:8px;border-radius:50%;display:inline-block}
+.ba-col.old .ba-h{color:var(--red)}.ba-col.old .ba-h i{background:var(--red)}
+.ba-col.new .ba-h{color:var(--green)}.ba-col.new .ba-h i{background:var(--green)}
+.ba-phones{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ba-phones .shot.phone{max-width:none;border-width:4px;border-radius:16px}
+.ba ul{list-style:none;margin-top:18px}
+.ba li{font-size:14px;color:var(--muted);padding:8px 0;border-top:1px solid var(--line)}
+
+/* notes */
+.note{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:14px;padding:26px 28px}
+.note .tag{font-family:var(--mono);font-size:12.5px;color:var(--amber);margin-bottom:12px}
+.note ul{list-style:none}
+.note li{font-size:14.5px;color:var(--muted);padding:10px 0;border-top:1px solid rgba(227,161,60,.14)}
+.note li:first-child{border-top:none;padding-top:0}
+.note li b{color:var(--txt);font-weight:600}
+
+/* rollout */
+.steps{display:grid;gap:16px}
+.step{display:grid;grid-template-columns:64px 1fr auto;gap:22px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px}
+.step.first{border-color:var(--purple-line);background:linear-gradient(0deg,var(--purple-bg),var(--purple-bg)),var(--card)}
+.step .n{font-family:var(--mono);font-size:26px;color:var(--purple);line-height:1}
+.step h4{font-size:18px;font-weight:700;margin-bottom:6px}
+.step p{font-size:14.5px;color:var(--muted)}
+.step .when{font-family:var(--mono);font-size:12.5px;color:var(--muted-2);white-space:nowrap;padding-top:4px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.metric{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--bg-2)}
+.metric b{display:block;font-size:15px;margin-bottom:6px}
+.metric span{font-size:13.5px;color:var(--muted)}
+
+/* why troopod */
+.clients{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 40px}
+.clients span{font-family:var(--mono);font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:8px 16px}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.person{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.person b{display:block;font-size:17px}
+.person i{display:block;font-style:normal;font-family:var(--mono);font-size:12.5px;color:var(--purple);margin:4px 0 12px}
+.person p{font-size:14px;color:var(--muted)}
+footer{padding:44px 0 64px;text-align:center;font-family:var(--mono);font-size:12.5px;color:var(--muted-2)}
+footer b{color:var(--txt);font-weight:500;letter-spacing:.12em}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(4,4,6,.92);display:none;align-items:center;justify-content:center;padding:28px;cursor:zoom-out}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+
+@media (max-width:980px){
+  .nav-links{display:none}
+  .mod,.prob-body{grid-template-columns:1fr;gap:26px}
+  .mod.flip .mod-media{order:0}
+  .mod-media{position:static}
+  .speed{grid-template-columns:repeat(3,1fr)}
+  .metrics{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .wrap,.nav-in{padding-left:16px;padding-right:16px}
+  section{padding:72px 0}
+  h1,h2{font-size:29px}
+  .lede{font-size:15.5px}
+  .stats,.stats.four,.goals,.team,.ba,.mod-text-cols,.shots-2{grid-template-columns:1fr}
+  .stats.four{grid-template-columns:1fr 1fr}
+  .prob{padding:24px 20px}
+  .prob-top{flex-direction:column;gap:12px}
+  .speed{grid-template-columns:1fr 1fr}
+  .step{grid-template-columns:1fr;gap:10px}
+  .metrics{grid-template-columns:1fr}
+}
+</style>
+<link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand"><img class="logo" src="troopod-logo.png" alt="Troopod"><span class="x">×</span>Isharya</div>
+    <div class="nav-links">
+      <a href="#goal"><span>01</span>Goal</a>
+      <a href="#problems"><span>02</span>Problems</a>
+      <a href="#redesign"><span>03</span>The Redesign</a>
+      <a href="#rollout"><span>04</span>Rollout</a>
+      <a href="#why"><span>05</span>Why Troopod</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 01 GOAL -->
+<section id="goal">
+  <div class="wrap">
+    <div class="eyebrow"><b>01</b> &nbsp;·&nbsp; Goal</div>
+    <h1>A product page that sells the piece the way <em>a store counter does</em></h1>
+    <p class="lede">Isharya's product is strong: 18k gold plated, hypoallergenic brass with an anti-tarnish coat and a 1-year warranty. The product page barely shows any of that. We redesigned the Tennis Girlie Square Front Back Earrings PDP around the specific problems found on the live page. Every module below exists to answer one question a shopper has before she pays.</p>
+
+    <div class="stats four">
+      <div class="stat"><b>4</b><span>Problems found on the live PDP</span></div>
+      <div class="stat"><b>12</b><span>Redesigned modules, each tied to a problem</span></div>
+      <div class="stat"><b>0</b><span>Reviews or ratings shown on the live page today</span></div>
+      <div class="stat"><b>1</b><span>PDP template, ready to roll out across the catalogue</span></div>
+    </div>
+
+    <div class="goals">
+      <div class="goal"><div class="tag">GOAL 01 · SEE IT</div><p>Let a shopper judge sparkle, scale and fit on the ear without the piece in her hand.</p></div>
+      <div class="goal"><div class="tag">GOAL 02 · TRUST IT</div><p>Put proof on the page: skin-safe materials, warranty, celebrity styling and real reviews.</p></div>
+      <div class="goal"><div class="tag">GOAL 03 · BUY IT WITHOUT FRICTION</div><p>Answer price, payment, delivery and returns before she has to go looking.</p></div>
+      <div class="goal"><div class="tag">GOAL 04 · BUY MORE</div><p>Turn a single pair of earrings into a styled set and a ready-to-send gift.</p></div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn p" href="https://vinitsingh-del.github.io/isharya-tennis-girlie-pdp/" target="_blank" rel="noopener">View the redesigned PDP →</a>
+      <a class="btn" href="https://isharya.com/products/tennis-girlie-square-front-back-earrings" target="_blank" rel="noopener">View the live PDP →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 02 PROBLEMS -->
+<section id="problems">
+  <div class="wrap">
+    <div class="eyebrow"><b>02</b> &nbsp;·&nbsp; Problems</div>
+    <h2>Four problems found on the live Isharya PDP</h2>
+    <p class="lede">Found by auditing the live Tennis Girlie Square Front Back Earrings page on desktop and mobile, its structured data and its Google PageSpeed report. Each maps to specific modules in the redesign that follows.</p>
+
+    <!-- P1 -->
+    <div class="prob" id="p1">
+      <div class="prob-top">
+        <div class="prob-tag">PROBLEM 01 &nbsp;·&nbsp; PRODUCT JUDGEMENT</div>
+        <a class="pill" href="#m1">Solved by modules 01, 06, 07 →</a>
+      </div>
+      <h3>A shopper can't judge size, sparkle or fit from the page</h3>
+      <div class="prob-body">
+        <div>
+          <p>Earrings are bought on how they look on the ear. The live page shows five still images, no video and no way to judge scale. The facts that answer "how big is it?" exist, but they're hidden.</p>
+          <div class="barrier">
+            <div class="tag">HIGHEST PRIORITY &nbsp;·&nbsp; BURIED INFORMATION</div>
+            <h4>Size and weight are locked inside a collapsed accordion</h4>
+            <p>"Weight: 4.2gms, Dimension: 30 X 24 mm" only appears after opening Description. The same block reads "0.3 Miron Gold Plating", a typo for micron, on the one line that describes the plating quality.</p>
+          </div>
+          <div class="barrier">
+            <div class="tag">MEDIA</div>
+            <h4>No video, no on-ear scale, no styling context</h4>
+            <p>There is nothing that shows the front-back construction moving, how the piece sits on the lobe, or what to wear it with.</p>
+          </div>
+        </div>
+        <div>
+          <div class="shot"><img src="shots/live-d-top.jpg" alt="Live Isharya PDP, desktop, first screen" loading="lazy"></div>
+          <div class="cap"><b>Live PDP, desktop.</b> Three collapsed accordions hold the description, size, care and shipping.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 -->
+    <div class="prob" id="p2">
+      <div class="prob-top">
+        <div class="prob-tag">PROBLEM 02 &nbsp;·&nbsp; TRUST AND PROOF</div>
+        <a class="pill" href="#m4">Solved by modules 04, 05, 10 →</a>
+      </div>
+      <h3>There is no proof on the page that other people bought and loved this</h3>
+      <div class="prob-body solo">
+        <p>Fashion jewellery at ₹3,599 is a considered purchase, and the first questions are "is it good quality?" and "will it irritate my ears?". The live page answers both with four small badges and nothing else.</p>
+        <div class="barrier">
+          <div class="tag">HIGHEST PRIORITY &nbsp;·&nbsp; SOCIAL PROOF</div>
+          <h4>Zero reviews, zero ratings, no celebrity or customer imagery</h4>
+          <p>No review widget, no star rating, and no customer or celebrity photos anywhere on the page.</p>
+        </div>
+        <div class="barrier">
+          <div class="tag">SEARCH VISIBILITY</div>
+          <h4>Google can't show price or stars for this product</h4>
+          <p>The page's structured data declares a WebPage, a BreadcrumbList and a JewelryStore, but no Product with price, availability or rating. Search results and AI shopping agents get no product facts to show.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P3 -->
+    <div class="prob" id="p3">
+      <div class="prob-top">
+        <div class="prob-tag">PROBLEM 03 &nbsp;·&nbsp; BUYING FRICTION</div>
+        <a class="pill" href="#m2">Solved by modules 02, 03, 04, 12 →</a>
+      </div>
+      <h3>Price, payment and delivery questions go unanswered at the moment of decision</h3>
+      <div class="prob-body">
+        <div>
+          <div class="barrier">
+            <div class="tag">PRICING</div>
+            <h4>Three price signals and an offer in hard-to-read type</h4>
+            <p>MRP ₹3,999 struck through, ₹3,599, "Save 10%", then a separate green bar reading "Extra 150/- Off On Prepaid Orders" in tiny, widely letter-spaced type squeezed between the two buttons.</p>
+          </div>
+          <div class="barrier">
+            <div class="tag">DELIVERY AND PAYMENT</div>
+            <h4>No delivery date, no PIN check, no EMI</h4>
+            <p>Shipping sits in a collapsed accordion that only says free shipping above ₹1,499. There is no "when will it arrive" and no EMI or COD information before checkout.</p>
+          </div>
+          <div class="barrier">
+            <div class="tag">MOBILE</div>
+            <h4>The buy buttons scroll away on mobile</h4>
+            <p>Once a shopper scrolls past the buttons there is no sticky add to cart. The only floating element is the WhatsApp button.</p>
+          </div>
+        </div>
+        <div class="shots-2">
+          <div><div class="shot phone"><img src="shots/live-m-1.jpg" alt="Live PDP on mobile, first screen" loading="lazy"></div><div class="cap"><b>Live, mobile, screen 1.</b> Image, title, three prices.</div></div>
+          <div><div class="shot phone"><img src="shots/live-m-2.jpg" alt="Live PDP on mobile, second screen" loading="lazy"></div><div class="cap"><b>Live, mobile, screen 2.</b> Offer bar, badges, accordions.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P4 -->
+    <div class="prob" id="p4">
+      <div class="prob-top">
+        <div class="prob-tag">PROBLEM 04 &nbsp;·&nbsp; ORDER VALUE AND SPEED</div>
+        <a class="pill" href="#m9">Solved by modules 08, 09 →</a>
+      </div>
+      <h3>Nothing on the page grows the order, and the page is heavy</h3>
+      <div class="prob-body">
+        <div>
+          <div class="barrier">
+            <div class="tag">AOV</div>
+            <h4>Generic carousels instead of a styled set</h4>
+            <p>Below the product sit "Bestsellers" and "You may also like": ten tiles picked by popularity, not to pair with this piece, with the same Tennis Girlie Small earrings appearing in both rows. There's no bundle, no "complete the look" and no reason to add a second piece.</p>
+          </div>
+          <div class="barrier">
+            <div class="tag">GIFTING</div>
+            <h4>No gift option on a piece that's bought as a gift</h4>
+            <p>Gifting is in the main navigation, but the PDP has no gift wrap, no message and no price-free invoice.</p>
+          </div>
+          <div class="barrier">
+            <div class="tag">PERFORMANCE</div>
+            <h4>121 script tags on a single product page</h4>
+            <p>Every app, pixel and widget adds to what a phone has to download before the shopper can interact.</p>
+          </div>
+        </div>
+        <div>
+          <div class="shot"><img src="shots/live-d-2.jpg" alt="Live PDP, generic Bestsellers carousel" loading="lazy"></div>
+          <div class="cap"><b>Live PDP, desktop.</b> Everything below the product is a generic carousel.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- before / after -->
+    <div class="ba" style="margin-top:44px">
+      <div class="ba-col old">
+        <div class="ba-h"><i></i>LIVE PDP · MOBILE</div>
+        <div class="ba-phones">
+          <div class="shot phone"><img src="shots/live-m-1.jpg" alt="Live PDP mobile, screen 1" loading="lazy"></div>
+          <div class="shot phone"><img src="shots/live-m-3.jpg" alt="Live PDP mobile, screen 3" loading="lazy"></div>
+        </div>
+        <ul>
+          <li>Ends after the accordions, two carousels and a newsletter box</li>
+          <li>No reviews, delivery check, gifting or bundles</li>
+        </ul>
+      </div>
+      <div class="ba-col new">
+        <div class="ba-h"><i></i>REDESIGNED PDP · MOBILE</div>
+        <div class="ba-phones">
+          <div class="shot phone"><img src="shots/m-hero.jpg" alt="Redesigned PDP mobile, first screen" loading="lazy"></div>
+          <div class="shot phone"><img src="shots/m-sticky.jpg" alt="Redesigned PDP mobile, sticky add to cart" loading="lazy"></div>
+        </div>
+        <ul>
+          <li>Video-first gallery, rating, and title pinned over the image</li>
+          <li>Buy buttons stay reachable in a sticky bar for the whole scroll</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 REDESIGN -->
+<section id="redesign">
+  <div class="wrap">
+    <div class="eyebrow"><b>03</b> &nbsp;·&nbsp; The Redesign</div>
+    <h2>Twelve modules, <em>each with a job</em></h2>
+    <p class="lede">Every module below solves one of the problems above. For each one: why it's on the page (the conversion reason) and why it looks the way it does (the design reason). The visual language follows Isharya's own site: Epilogue and Work Sans, the burgundy accent, square edges and hairline rules, so the page feels like Isharya, only clearer.</p>
+
+    <!-- M1 -->
+    <div class="mod" id="m1">
+      <div class="mod-media">
+        <div class="shot"><img src="shots/d-hero.jpg" alt="Redesigned hero with sticky gallery and buy box" loading="lazy"></div>
+        <div class="cap"><b>Desktop, first screen.</b> Gallery on the left stays pinned while the details scroll.</div>
+      </div>
+      <div>
+        <div class="mod-num">01</div>
+        <h3>Sticky, video-first gallery</h3>
+        <div class="solves">Solves → <a href="#p1">Problem 01, product judgement</a></div>
+        <div class="why c">
+          <div class="tag">WHY IT'S THERE</div>
+          <ul>
+            <li><b>Video leads.</b> The first slide is a short product video, so the front-back construction and sparkle are visible before any scrolling.</li>
+            <li><b>On-model shots in the thumbnail strip.</b> Two of six thumbnails show the piece on the ear, the fastest way to read scale.</li>
+            <li><b>Zoom, save and share</b> sit on the image itself, where the intent happens.</li>
+          </ul>
+        </div>
+        <div class="why d">
+          <div class="tag">DESIGN REASON</div>
+          <ul>
+            <li><b>The image stays pinned</b> while the right column scrolls, so the product is always in view next to the detail being read. It releases when the buy section ends.</li>
+            <li><b>A 68px vertical thumbnail strip</b> keeps the main image as large as possible on desktop. On mobile it becomes a horizontal strip under the image.</li>
+            <li><b>A "Bestseller" badge</b> in the brand burgundy is the only colour on the image, so it reads without competing with the gold.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- M2 -->
+    <div class="mod flip" id="m2">
+      <div class="mod-media">
+        <div class="shot"><img src="shots/d-price.jpg" alt="Price, buttons and payment options" loading="lazy"></div>
+        <div class="cap"><b>Buy box.</b> One price, stock and EMI, one primary action.</div>
+      </div>
+      <div>
+        <div class="mod-num">02</div>
+        <h3>A buy box with one price and one primary action</h3>
+        <div class="solves">Solves → <a href="#p3">Problem 03, buying friction</a></div>
+        <div class="why c">
+          <div class="tag">WHY IT'S THERE</div>
+          <ul>
+            <li><b>One price, stated once.</b> The live page shows a struck MRP, a sale price, a percentage and a separate prepaid offer. The redesign shows a single number marked "Inclusive of all taxes", so there's no mental maths.</li>
+            <li><b>Stock and EMI under the price.</b> Low-stock urgency and "EMI from Rs.333 per month" answer "should I buy now?" and "can I afford it?" in the same glance.</li>
+            <li><b>"Visit store and try on in-person"</b> gives hesitant shoppers an offline path instead of leaving.</li>
+          </ul>
+        </div>
+        <div class="why d">
+          <div class="tag">DESIGN REASON</div>
+          <ul>
+            <li><b>Clear button hierarchy.</b> Buy Now is the only solid black button, Add to Cart is outlined, and the store link is smaller still.</li>
+            <li><b>The price is the largest text on the page after the title</b>, set in Epilogue, Isharya's display face.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- M3 -->
+    <div class="mod" id="m3">
+      <div class="mod-media">
+        <div class="shot"><img src="shots/d-payvia.jpg" alt="Pay via row" loading="lazy"></div>
+        <div class="cap"><b>Pay via row.</b> Five methods, evenly spaced, aligned to the row labels.</div>
+      </div>
+      <div>
+        <div class="mod-num">03</div>
+        <h3>Payment methods, answered before checkout</h3>
+        <div class="solves">Solves → <a href="#p3">Problem 03, buying friction</a></div>
+        <div class="why c">
+          <div class="tag">WHY IT'S THERE</div>
+          <p>"Can I pay the way I want?" is one of the last questions before a shopper commits. UPI, credit card, net banking, COD and EMI are shown right under the buttons, instead of being discovered at checkout.</p>
+        </div>
+        <div class="why d">
+          <div class="tag">DESIGN REASON</div>
+          <ul>
+            <li><b>Its own labelled row</b>, "PAY VIA", in the same left rail as PRICE and CHECK, so the whole buy box scans like a spec sheet.</li>
+            <li><b>Thin line icons in muted grey, equal columns</b>, so the row is informative but never louder than the Buy Now button above it.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- M4 -->
+    <div class="mod flip" id="m4">
+      <div class="mod-media">
+        <div class="shot"><img src="shots/d-check-cert.jpg" alt="Delivery check and certified materials" loading="lazy"></div>
+        <div class="cap"><b>Check and Cert rows.</b> Delivery and skin-safety, side by side with the price.</div>
+      </div>
+      <div>
+        <div class="mod-num">04</div>
+        <h3>Delivery check and certified materials</h3>
+        <div class="solves">Solves → <a href="#p2">Problem 02, trust</a> and <a href="#p3">Problem 03, friction</a></div>
+        <div class="why c">
+          <div class="tag">WHY IT'S THERE</div>
+          <ul>
+            <li><b>PIN code check.</b> Arrival date is the top question for anything bought for an occasion. Free delivery, 7-day returns and secure payments sit right under the field.</li>
+            <li><b>Certified materials, in plain words.</b> Hypoallergenic, nickel free, anti-tarnish and a 1-year warranty directly address "will this irritate my ears?" and "will it tarnish?".</li>
+          </ul>
+        </div>
+        <div class="why d">
+          <div class="tag">DESIGN REASON</div>
+          <ul>
+            <li><b>Burgundy line icons with sentence-case labels</b>, matching the style of Isharya's current trust badges, but drawn as vectors so they stay sharp and legible at any size.</li>
+            <li><b>A 2×2 grid with generous spacing</b> instead of four small boxed badges, so each claim reads in one glance.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- M5 -->
+    <div class="mod top" id="m5">
+      <div class="mod-media">
+        <div class="shot"><img src="shots/d-seen-notes.jpg" alt="Celebrity styling and curated notes" loading="lazy"></div>
+        <div class="cap"><b>Seen on and Notes rows.</b> Social proof, then three reasons to buy.</div>
+      </div>
+      <div>
+        <div class="mod-num">05</div>
+        <h3>Celebrity styling and curated notes</h3>
+        <div class="solves">Solves → <a href="#p2">Problem 02, trust and proof</a></div>
+        <div class="why c">
+          <div class="tag">WHY IT'S THERE</div>
+          <ul>
+            <li><b>"Seen on"</b> puts celebrity styling right beside the buy box. Aspiration is one of the strongest trust signals in fashion jewellery.</li>
+            <li><b>"Why it stands out"</b> gives three short reasons (silhouette, weight, packaging) for shoppers who skim rather than read a paragraph.</li>
+          </ul>
+        </div>
+        <div class="why d">
+          <div class="tag">DESIGN REASON</div>
+          <p>Three equal image tiles with the edit name set on the photo keep the row compact. The notes use numbered hairline rows, the same rhythm as the rest of the panel, so the column stays calm.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- M6 -->
+    <div class="mod flip" id="m6">
+      <div class="mod-media">
+        <div class="shot"><img src="shots/d-spec-gift.jpg" alt="Dimensions and gift option" loading="lazy"></div>
+        <div class="cap"><b>Spec and Gift rows.</b> The hidden size facts, now the most visible numbers in the panel.</div>
+      </div>
+      <div>
+        <div class="mod-num">06</div>
+        <h3>Dimensions up front, and a gift toggle</h3>
+        <div class="solves">Solves → <a href="#p1">Problem 01, judgement</a> and <a href="#p4">Problem 04, order value</a></div>
+        <div class="why c">
+          <div class="tag">WHY IT'S THERE</div>
+          <ul>
+            <li><b>30mm × 24mm, 4.2g, sold as a pair.</b> The exact facts buried in the live accordion, now visible without a click, with a care guide link beside them.</li>
+            <li><b>"Send as a gift"</b> adds a recipient, a message and premium wrapping, and ships with no price on the invoice.</li>
+          </ul>
+        </div>
+        <div class="why d">
+          <div class="tag">DESIGN REASON</div>
+          <p>Four equal tiles with a large number and a small label read like a spec card, so size is understood at a glance. The gift option is a simple toggle rather than a form, so it costs nothing to ignore.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- M7 -->
+    <div class="mod wide" id="m7">
+      <div>
+        <div class="mod-num">07</div>
+        <h3>"See how it comes alive": the on-ear story</h3>
+        <div class="solves">Solves → <a href="#p1">Problem 01, product judgement</a></div>
+      </div>
+      <div class="mod-media">
+        <div class="shot"><img src="shots/d-experience.jpg" alt="Experience the product section" loading="lazy"></div>
+        <div class="cap"><b>Experience the product.</b> Three chapters with an inline add to cart underneath.</div>
+      </div>
+      <div class="mod-text-cols">
+        <div class="why c">
+          <div class="tag">WHY IT'S THERE</div>
+          <p>Close-up, on-ear photography in three chapters (The Detail, The Proportion, The Ritual) shows the marquise stones, how the front-back piece frames the lobe, and how it's worn. It's the closest thing to holding the earring up to a mirror.</p>
+          <p>An inline "Ready to make it yours?" bar with the price and returns promise catches the shopper at the peak of interest.</p>
+        </div>
+        <div class="why d">
+          <div class="tag">DESIGN REASON</div>
+          <p>A full-width, cinematic stage breaks the rhythm after the dense buy box and signals a change from facts to feeling. Frosted glass chapter tabs sit on the photo, so switching chapters never pulls attention away from the product.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- M8 -->
+    <div class="mod wide" id="m8">
+      <div>
+        <div class="mod-num">08</div>
+        <h3>Four ways to style it</h3>
+        <div class="solves">Solves → <a href="#p1">Problem 01, judgement</a> and <a href="#p4">Problem 04, order value</a></div>
+      </div>
+      <div class="mod-media">
+        <div class="shot"><img src="shots/d-styling.jpg" alt="Styling inspiration section" loading="lazy"></div>
+        <div class="cap"><b>Styling inspiration.</b> Tennis Whites, Sharp Tailoring, After Dark, The Stack.</div>
+      </div>
+      <div class="mod-text-cols">
+        <div class="why c">
+          <div class="tag">WHY IT'S THERE</div>
+          <p>"What would I wear it with?" is a hidden objection. Four looks, from sporty to evening to stacked, show the earring works across occasions, which widens the reason to buy and sets up the complete-the-look bundle right below.</p>
+        </div>
+        <div class="why d">
+          <div class="tag">DESIGN REASON</div>
+          <p>A centred, four-tile gallery with the same model across looks keeps attention on the earring changing context, not on a new face. Each tile is labelled as an AI styling concept, to stay transparent with the shopper.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- M9 -->
+    <div class="mod wide" id="m9">
+      <div>
+        <div class="mod-num">09</div>
+        <h3>Complete the look, with bundle pricing</h3>
+        <div class="solves">Solves → <a href="#p4">Problem 04, order value</a></div>
+      </div>
+      <div class="mod-media">
+        <div class="shot"><img src="shots/d-bundle.jpg" alt="Complete the look bundle" loading="lazy"></div>
+        <div class="cap"><b>Complete the look.</b> Four Tennis Girlie pieces with two bundle tiers.</div>
+      </div>
+      <div class="mod-text-cols">
+        <div class="why c">
+          <div class="tag">WHY IT'S THERE</div>
+          <p>The live page shows ten unrelated bestsellers. The redesign shows four pieces from the same Tennis Girlie line (hoops, pendant, stack ring, bracelet) with "Buy any 2" and "Buy any 3" pricing applied automatically at checkout. It gives a concrete reason to add a second piece and ties into Isharya's existing spend-based offers.</p>
+        </div>
+        <div class="why d">
+          <div class="tag">DESIGN REASON</div>
+          <p>Two offer cards sit above the products, with the three-piece tier marked "Most chosen" to anchor the higher option. One-tap "Add" buttons keep the shopper on the PDP instead of sending her to four more pages.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- M10 -->
+    <div class="mod" id="m10">
+      <div class="mod-media">
+        <div class="shot"><img src="shots/d-faq.jpg" alt="FAQ section" loading="lazy"></div>
+        <div class="cap"><b>Questions, answered.</b> Five objections, handled on the page.</div>
+      </div>
+      <div>
+        <div class="mod-num">10</div>
+        <h3>FAQ built from real objections</h3>
+        <div class="solves">Solves → <a href="#p2">Problem 02, trust</a> and <a href="#p3">Problem 03, friction</a></div>
+        <div class="why c">
+          <div class="tag">WHY IT'S THERE</div>
+          <p>Care of the gold plating, what happens if they don't suit me, sensitive ears, COD availability and gifting: the five questions a shopper would otherwise ask on WhatsApp or leave to find answers for.</p>
+        </div>
+        <div class="why d">
+          <div class="tag">DESIGN REASON</div>
+          <p>Collapsed, question-first rows keep the section short. Answers are written in plain text in the page, so search engines and AI assistants can read them too.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- M11 -->
+    <div class="mod flip" id="m11">
+      <div class="mod-media">
+        <div class="shot"><img src="shots/d-service.jpg" alt="Service promise strip" loading="lazy"></div>
+        <div class="cap"><b>Service strip.</b> Five promises, one line each.</div>
+      </div>
+      <div>
+        <div class="mod-num">11</div>
+        <h3>A closing service promise</h3>
+        <div class="solves">Solves → <a href="#p2">Problem 02, trust</a></div>
+        <div class="why c">
+          <div class="tag">WHY IT'S THERE</div>
+          <p>7-day returns, 1-year warranty, free shipping, gift packaging and hypoallergenic materials, restated at the bottom for the shopper who scrolled the whole page and needs one last reassurance.</p>
+        </div>
+        <div class="why d">
+          <div class="tag">DESIGN REASON</div>
+          <p>A big number or word ("7", "1", "Free", "Box", "Safe") over a short label makes each promise scannable from a distance.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- M12 -->
+    <div class="mod" id="m12">
+      <div class="mod-media">
+        <div class="shots-2">
+          <div><div class="shot phone"><img src="shots/m-buybox.jpg" alt="Mobile buy box" loading="lazy"></div></div>
+          <div><div class="shot phone"><img src="shots/m-sticky.jpg" alt="Mobile sticky add to cart" loading="lazy"></div></div>
+        </div>
+        <div class="cap" style="text-align:center"><b>Mobile.</b> Buy box, and the sticky bar that follows the scroll.</div>
+      </div>
+      <div>
+        <div class="mod-num">12</div>
+        <h3>Mobile-first buy flow with a sticky bar</h3>
+        <div class="solves">Solves → <a href="#p3">Problem 03, buying friction</a></div>
+        <div class="why c">
+          <div class="tag">WHY IT'S THERE</div>
+          <p>Most paid traffic lands on mobile. Once the buy buttons scroll away, a sticky bar with the product name, price, Add to Cart and Buy Now stays at the bottom of the screen, so the decision is always one tap away.</p>
+        </div>
+        <div class="why d">
+          <div class="tag">DESIGN REASON</div>
+          <ul>
+            <li><b>Frosted glass bar</b> that lets the page show through, so it feels part of the page rather than a banner.</li>
+            <li><b>It only appears once the main buttons leave the screen</b>, so there are never two sets of buttons visible at once.</li>
+            <li><b>Title pinned over the image</b> on mobile, so the shopper knows what she's looking at from the first screen.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:40px">
+      <div class="tag">BEFORE LAUNCH &nbsp;·&nbsp; PLACEHOLDERS TO REPLACE WITH REAL DATA</div>
+      <ul>
+        <li><b>Ratings and reviews.</b> "4.8 / 5 · 124 reviews" is a design placeholder. The live page has no reviews yet, so this needs a reviews app connected to real customer data.</li>
+        <li><b>Stock and purchase notifications.</b> "Only 7 left · Selling fast in Delhi NCR" and "bought this 22 minutes ago" must come from live inventory and order data, or be removed.</li>
+        <li><b>360° view.</b> The four rotation frames are currently the same image and need a real turntable shoot.</li>
+        <li><b>Price.</b> The design shows Rs.3,999. The live sale price is ₹3,599, so the final price display should follow Isharya's current pricing.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 04 ROLLOUT -->
+<section id="rollout">
+  <div class="wrap">
+    <div class="eyebrow"><b>04</b> &nbsp;·&nbsp; Rollout</div>
+    <h2>Build it, prove it, then roll it out</h2>
+    <p class="lede">The redesign is a template, not a one-off page. We recommend proving it on this product with a controlled test before rolling it out across the catalogue.</p>
+    <div class="steps">
+      <div class="step first">
+        <div class="n">01</div>
+        <div><h4>Build as a Shopify PDP template on a duplicate theme</h4><p>Every module built as a reusable section driven by product data, so nothing touches the live storefront until Isharya has reviewed it. Reviews, inventory and delivery checks connected to real data.</p></div>
+        <div class="when">START HERE →</div>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <div><h4>A/B test against the live PDP</h4><p>Split traffic on the Tennis Girlie Square Front Back Earrings between the current page and the redesign, and read the result on conversion rate, add-to-cart rate and average order value.</p></div>
+        <div class="when">Test phase</div>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <div><h4>Roll out to the Tennis collection and bestsellers</h4><p>Once the winner is clear, apply the template to the rest of the Tennis line and top sellers, with product-specific styling, bundles and FAQs.</p></div>
+        <div class="when">After the test</div>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <div><h4>Keep testing module by module</h4><p>Bundle tiers, price display, the order of modules and the gallery lead image, each tested in turn as part of an ongoing CRO programme.</p></div>
+        <div class="when">Ongoing</div>
+      </div>
+    </div>
+    <div class="metrics">
+      <div class="metric"><b>Conversion rate</b><span>Sessions that end in an order</span></div>
+      <div class="metric"><b>Add-to-cart rate</b><span>Including sticky bar and inline buttons</span></div>
+      <div class="metric"><b>Average order value</b><span>Driven by bundles and gifting</span></div>
+      <div class="metric"><b>Mobile speed</b><span>PageSpeed score and Core Web Vitals</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 WHY -->
+<section id="why">
+  <div class="wrap">
+    <div class="eyebrow"><b>05</b> &nbsp;·&nbsp; Why Troopod</div>
+    <h2>100+ brands, real results</h2>
+    <p class="lede">Troopod is run by operators who have built and scaled billion-dollar consumer businesses from scratch.</p>
+    <div class="stats four">
+      <div class="stat"><b>100+</b><span>Brands powered</span></div>
+      <div class="stat"><b>Full-stack</b><span>Strategy, design, dev, CRO</span></div>
+      <div class="stat"><b>25%</b><span>Average conversion upside across Troopod CRO engagements</span></div>
+      <div class="stat"><b>75%</b><span>Experiment success rate across Troopod's CRO work</span></div>
+    </div>
+    <p style="color:var(--muted);font-size:15px">Recently working with, among others:</p>
+    <div class="clients"><span>Tanishq</span><span>Durex</span><span>Bombay Shaving Company</span><span>Essor Group</span><span>Wellbeing Nutrition</span></div>
+    <div class="team">
+      <div class="person"><b>Neeraj Joshi</b><i>CEO, Troopod</i><p>Early product at Spinny. Built an internal CRM that lifted team efficiency by 10x.</p></div>
+      <div class="person"><b>Rahul Bhola</b><i>CTO, Troopod</i><p>Tech at Lenskart. Built a backend retail system scaled to 10 million plus customers.</p></div>
+      <div class="person"><b>Vinit Singh</b><i>Business Lead, Troopod</i><p>Early growth at Spinny. Now driving growth for 100+ consumer brands at Troopod.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer><b>TROOPOD &nbsp;×&nbsp; ISHARYA</b><br><br>Prepared for the Isharya team</footer>
+
+<div class="lb" id="lb" role="dialog" aria-label="Screenshot preview"><img alt=""></div>
+<script>
+const lb=document.getElementById('lb'),lbImg=lb.querySelector('img');
+document.querySelectorAll('.shot img').forEach(i=>i.addEventListener('click',()=>{lbImg.src=i.src;lbImg.alt=i.alt;lb.classList.add('open');}));
+lb.addEventListener('click',()=>lb.classList.remove('open'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open');});
+</script>
+<script src="menu.js"></script>
+</body>
+</html>
