@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Isharya Site Speed</title>
-<meta name="description" content="TrooPerformance: a site speed audit of the Isharya product page, and the plan and commercials to fix it.">
+<meta name="description" content="TrooPerformance: a site speed audit of the Isharya product page, and the plan to fix it.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -297,8 +297,7 @@ code{font-family:var(--mono);font-size:.88em;background:var(--card-2);border:1px
       <a href="#today"><span>01</span>Today</a>
       <a href="#diagnosis"><span>02</span>Diagnosis</a>
       <a href="#approach"><span>03</span>Approach</a>
-      <a href="#commercials"><span>04</span>Commercials</a>
-      <a href="#why"><span>05</span>Why Troopod</a>
+      <a href="#why"><span>04</span>Why Troopod</a>
     </div>
   </div>
 </nav>
@@ -512,7 +511,7 @@ code{font-family:var(--mono);font-size:.88em;background:var(--card-2);border:1px
     <div class="fixes">
       <div class="fix-col">
         <div class="why c">
-          <div class="tag">THEME-SIDE · WHAT WE FIX FIRST</div>
+          <div class="tag">TRACK 1 · THEME-SIDE · WHAT WE FIX FIRST</div>
           <ul>
             <li><b>Show the product photo first.</b> Mark the main image as high priority and remove what delays its paint.</li>
             <li><b>Unblock rendering.</b> Inline critical CSS and load theme, app and font stylesheets without blocking.</li>
@@ -524,7 +523,7 @@ code{font-family:var(--mono);font-size:.88em;background:var(--card-2);border:1px
       </div>
       <div class="fix-col">
         <div class="why d">
-          <div class="tag">APP-SIDE · WHAT WE TAKE TO VENDORS</div>
+          <div class="tag">TRACK 2 · APP-SIDE · WHAT WE TAKE TO VENDORS</div>
           <ul>
             <li><b>Shiprocket / Pickrr:</b> load the checkout only when a shopper taps Buy Now or opens the cart, and load <code>uc.js</code> once.</li>
             <li><b>WhatsApp:</b> keep one widget, drop the other, and swap the GIF for a static icon.</li>
@@ -567,58 +566,10 @@ code{font-family:var(--mono);font-size:.88em;background:var(--card-2);border:1px
   </div>
 </section>
 
-<!-- 04 COMMERCIALS -->
-<section id="commercials">
-  <div class="wrap">
-    <div class="eyebrow"><b>04</b> &nbsp;·&nbsp; Commercials</div>
-    <h2>Two tracks: the theme, and the apps</h2>
-
-    <div class="track">
-      <div class="track-h">
-        <div><div class="tag">TRACK 1 · THEME-SIDE OPTIMISATION</div><h3>Optimise and maintain</h3></div>
-        <span class="badge">Core</span>
-      </div>
-      <p>Optimising the current theme on a duplicate copy, taking it to production, and holding the score there, as a 6-month programme. Work on third-party app scripts is outside this scope and covered in Track 2.</p>
-      <div class="prices">
-        <div class="price"><span>One-time · Month 1</span><b>₹1.5L</b><p>Theme-side optimisation, reviewed and shipped to production</p></div>
-        <div class="price"><span>Quarterly · Recurring</span><b>₹1.25L <small>/ qtr × 2</small></b><p>Ongoing maintenance to hold the score, months 2 to 6</p></div>
-      </div>
-      <div class="total"><b>6-month programme, ₹4L total:</b> ₹1.5L one-time to optimise and go live, plus ₹1.25L per quarter for two quarters to maintain it.</div>
-    </div>
-
-    <div class="track">
-      <div class="track-h">
-        <div><div class="tag">TRACK 2 · APP AND THIRD-PARTY COORDINATION</div><h3>Work with the app vendors</h3></div>
-        <span class="badge opt">Optional add-on</span>
-      </div>
-      <p>Runs alongside Track 1. We work with Isharya's app vendors, starting with Shiprocket, to fix the scripts that weigh the page down most. It needs introductions from the Isharya team to the relevant app teams.</p>
-      <div class="prices">
-        <div class="price"><span>One-time</span><b>₹1L</b><p>₹50k fixed, plus ₹50k on hitting the target</p></div>
-        <div class="price"><span>Monthly</span><b>Included</b><p>No separate monthly fee, covered by Track 1</p></div>
-      </div>
-    </div>
-
-    <div class="note">
-      <div class="tag">TERMS AND NOTES</div>
-      <ul>
-        <li><b>The 15% band.</b> Lighthouse scores vary by device, network and time of day. A result within ±15% of the target is treated as on target.</li>
-        <li><b>Change guidelines.</b> The guideline document must be followed by Isharya's tech team and agencies on every future change, so gains aren't quietly lost.</li>
-        <li><b>Track 1 scope.</b> Score impact from third-party apps can't be delivered under Track 1. It's covered only under Track 2.</li>
-        <li><b>Track 2 dependency.</b> App-side work needs the vendors' cooperation, which depends on introductions from the Isharya team.</li>
-        <li><b>Measurement.</b> Scores are measured with Lighthouse, mobile preset, unless stated otherwise.</li>
-        <li><b>Validity.</b> These commercials are valid for 15 days from the date of this proposal.</li>
-        <li><b>Payment.</b> The one-time fee is payable in advance of deploying the optimised theme. Recurring maintenance fees are payable quarterly in advance.</li>
-        <li><b>Taxes.</b> Applicable taxes, if any, are charged additionally.</li>
-        <li><b>Team dependency.</b> This engagement needs prompt support, introductions and approvals from the Isharya team. A delay of more than 3 days on any of these will affect deliverables, and Troopod won't be responsible for the resulting impact.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- 05 WHY -->
+<!-- 04 WHY -->
 <section id="why">
   <div class="wrap">
-    <div class="eyebrow"><b>05</b> &nbsp;·&nbsp; Why Troopod</div>
+    <div class="eyebrow"><b>04</b> &nbsp;·&nbsp; Why Troopod</div>
     <h2>Recent work</h2>
     <p class="lede">Similar theme-side performance work, delivered for a brand in the Essor Group's ($1B+) portfolio in 2 weeks.</p>
     <div class="stats">
